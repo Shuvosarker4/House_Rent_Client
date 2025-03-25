@@ -23,12 +23,12 @@ const CarouselSlide = ({
             <FaHome className="text-[#fd390e] text-3xl" />
             <span className="ml-2 text-[#091E22] font-bold">{headText}</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-bold text-[#091E22]">
+          <h1 className=" text-3xl sm:text-5xl font-bold text-[#091E22]">
             {beforeHighlight}
             <span className="text-[#fd390e]">{highlightedText}</span>
             {afterHighlight}
           </h1>
-          <p className="py-4 sm:py-6 text-[#6C7F89]">{subtitle}</p>
+          <p className="py-4  sm:py-6 text-[#6C7F89]">{subtitle}</p>
           <div className="flex justify-center md:justify-start">
             <button className="btn bg-[#fd390e] text-white">Get Started</button>
           </div>
