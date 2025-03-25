@@ -2,6 +2,7 @@ import React from "react";
 import { FaHome } from "react-icons/fa";
 
 const CarouselSlide = ({
+  headText,
   beforeHighlight,
   highlightedText,
   afterHighlight,
@@ -20,9 +21,7 @@ const CarouselSlide = ({
         <div className="w-full md:w-1/2 px-4 sm:px-8 text-center md:text-left">
           <div className="flex justify-center md:justify-start items-center mb-2">
             <FaHome className="text-[#fd390e] text-3xl" />
-            <span className="ml-2 text-[#091E22] font-bold">
-              Where dreams are deeded!
-            </span>
+            <span className="ml-2 text-[#091E22] font-bold">{headText}</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-bold text-[#091E22]">
             {beforeHighlight}

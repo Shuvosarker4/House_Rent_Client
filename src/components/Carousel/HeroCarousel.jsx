@@ -16,6 +16,7 @@ import CarouselSlide from "./CarouselSlide";
 const HeroCarousel = () => {
   const slides = [
     {
+      headText: "Where dreams are deeded!",
       beforeHighlight: "Find Your ",
       highlightedText: "Perfect Home",
       afterHighlight: " Rent with Ease!",
@@ -24,6 +25,7 @@ const HeroCarousel = () => {
       image: img1,
     },
     {
+      headText: "Experience elegance like never before!",
       beforeHighlight: "Luxury Living, ",
       highlightedText: "Affordable ",
       afterHighlight: "Home",
@@ -32,6 +34,7 @@ const HeroCarousel = () => {
       image: img2,
     },
     {
+      headText: "Your dream home is just a click away!",
       beforeHighlight: " ",
       highlightedText: "Hassle-Free ",
       afterHighlight: "Home Renting Experience",
@@ -58,6 +61,7 @@ const HeroCarousel = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <CarouselSlide
+              headText={slide.headText}
               beforeHighlight={slide.beforeHighlight}
               highlightedText={slide.highlightedText}
               afterHighlight={slide.afterHighlight}
