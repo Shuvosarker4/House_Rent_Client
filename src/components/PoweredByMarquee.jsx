@@ -11,11 +11,18 @@ const PoweredByMarquee = () => {
   return (
     <div className="py-4">
       <div className="container mx-auto px-4">
-        <h2 className="mb-6 text-2xl sm:text-3xl text-center font-bold text-[#091E22]">
+        <h2 className=" mb-6 text-center text-3xl sm:text-5xl font-bold text-[#091E22]">
           Powered By
         </h2>
         <div className="rounded-lg shadow p-4">
-          <Marquee pauseOnHover gradient={false} speed={40}>
+          <Marquee
+            pauseOnHover={true}
+            speed={50}
+            gradient={true}
+            direction="left"
+            loop="infinite"
+            delay={1}
+          >
             <img
               src={Bkash}
               alt="Bkash"
