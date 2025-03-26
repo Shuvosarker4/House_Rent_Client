@@ -17,7 +17,7 @@ const AdvertisementSection = () => {
   }, []);
   return (
     <div className="p-5">
-      <h1 className=" text-3xl sm:text-5xl font-bold text-[#091E22]">
+      <h1 className=" mb-6 text-center text-3xl sm:text-5xl font-bold text-[#091E22]">
         Featured Properties
       </h1>
       {isLoading && (
