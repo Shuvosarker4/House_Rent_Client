@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react";
 import Advertisement from "./Advertisement";
 import ErrorAlert from "../ErrorAlert";
-import apiClient from "../../services/api-client";
+import useFetchAdvertise from "../hooks/useFetchAdvertise";
 
 const AdvertisementSection = () => {
-  const [advertisements, setAdvertisements] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-  useEffect(() => {
-    setIsLoading(true);
-    apiClient
-      .get("/advertisements")
-      .then((res) => setAdvertisements(res.data))
-      .catch((err) => setError(err.message))
-      .finally(() => setIsLoading(false));
-  }, []);
+  const { advertisements, isLoading, error } = useFetchAdvertise();
   return (
     <div className="p-5">
       <h1 className=" mb-6 text-center text-3xl sm:text-5xl font-bold text-[#091E22]">

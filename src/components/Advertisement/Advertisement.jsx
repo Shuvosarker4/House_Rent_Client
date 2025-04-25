@@ -3,7 +3,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import property3 from "../../assets/images/slide_1.jpeg";
 
 const Advertisement = ({ ads }) => {
-  const { location, price, description, title } = ads;
+  const { location, price, description, title, category } = ads;
   return (
     <div className="max-w-sm bg-white rounded-xl shadow-md overflow-hidden">
       <div className="relative">
@@ -27,6 +27,9 @@ const Advertisement = ({ ads }) => {
         </p>
         <h3 className="text-lg font-semibold text-gray-800 mt-1">
           {description}
+        </h3>
+        <h3 className="text-lg font-semibold text-gray-800 mt-1">
+          Category : {category}
         </h3>
       </div>
     </div>
