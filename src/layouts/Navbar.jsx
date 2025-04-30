@@ -1,6 +1,8 @@
 import { Link } from "react-router";
+import useAuthContext from "../components/hooks/useAuthContext";
 
 const Navbar = () => {
+  const { logoutUser } = useAuthContext();
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -132,7 +134,9 @@ const Navbar = () => {
               <a>Settings</a>
             </li>
             <li>
-              <a>Logout</a>
+              <a onClick={logoutUser} style={{ cursor: "pointer" }}>
+                Logout
+              </a>
             </li>
           </ul>
         </div>

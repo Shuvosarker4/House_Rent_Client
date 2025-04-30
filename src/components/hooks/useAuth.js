@@ -33,7 +33,7 @@ const useAuth = () => {
     setErrorMsg("");
     try {
       const response = await apiClient.post("/auth/jwt/create/", userData);
-      setAuthTokens(response.data);
+      console.log(response.data);
       localStorage.setItem("authTokens", JSON.stringify(response.data));
 
       // After login set user
