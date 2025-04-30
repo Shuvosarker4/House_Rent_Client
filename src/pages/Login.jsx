@@ -20,11 +20,10 @@ const Login = () => {
     setLoading(true);
     try {
       await loginUser(data);
-      if (errorMsg) {
-        navigate("/");
-      }
+
+      navigate("/");
     } catch (error) {
-      console.log("Login Failed", error);
+      console.log(error);
     } finally {
       setLoading(false);
     }

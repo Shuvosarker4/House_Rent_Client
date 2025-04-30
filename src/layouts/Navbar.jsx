@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import useAuthContext from "../components/hooks/useAuthContext";
 
 const Navbar = () => {
-  const { logoutUser } = useAuthContext();
+  const { logoutUser, user } = useAuthContext();
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -45,6 +45,11 @@ const Navbar = () => {
             <li>
               <Link to="/properties">Properties</Link>
             </li>
+            {!user && (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">daisyUI</a>
@@ -70,6 +75,11 @@ const Navbar = () => {
           <li>
             <Link to="/properties">Properties</Link>
           </li>
+          {!user && (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
