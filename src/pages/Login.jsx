@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import { useState } from "react";
+import ErrorAlert from "../../src/components/ErrorAlert";
 import useAuthContext from "../components/hooks/useAuthContext";
 
 const Login = () => {
@@ -19,7 +20,9 @@ const Login = () => {
     setLoading(true);
     try {
       await loginUser(data);
-      navigate("/");
+      if (errorMsg) {
+        navigate("/");
+      }
     } catch (error) {
       console.log("Login Failed", error);
     } finally {
@@ -102,7 +105,7 @@ const Login = () => {
         </div>
       ) : (
         <div>
-          <h1>Go to </h1>
+          <h1>You Already Logged in go to </h1>
           <button className="btn btn-primary w-full">
             <a href="/">Home</a>
           </button>
