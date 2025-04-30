@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryCard from "./categoryCard";
+import CategoryCard from "../categories/CategoryCard";
 import property1 from "../../assets/images/undraw_business-deal_nx2n.svg";
 import property2 from "../../assets/images/undraw_apartment-rent_oodr.svg";
 import property3 from "../../assets/images/undraw_buy-house_an72.svg";
