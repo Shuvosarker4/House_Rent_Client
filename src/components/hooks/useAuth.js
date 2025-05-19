@@ -70,6 +70,10 @@ const useAuth = () => {
           Authorization: `JWT ${authTokens?.access}`,
         },
       });
+      return {
+        success: true,
+        message: "Profile Updated Successful.",
+      };
     } catch (error) {
       return handleAPIError(error);
     }
@@ -84,6 +88,10 @@ const useAuth = () => {
           Authorization: `JWT ${authTokens?.access}`,
         },
       });
+      return {
+        success: true,
+        message: "Password Change Successful.",
+      };
     } catch (error) {
       return handleAPIError(error);
     }
