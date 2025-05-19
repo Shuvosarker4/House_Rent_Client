@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import useAuthContext from "../components/hooks/useAuthContext";
 import ErrorAlert from "../components/ErrorAlert";
 import ProfileButtons from "../components/Dashboard/Profile/ProfileButtons";
-import PasswordChangeForm from "../components/Dashboard/Profile/PasswordChangeform";
+import PasswordChangeForm from "../components/Dashboard/Profile/PasswordChangeForm";
 import ProfileForm from "../components/Dashboard/Profile/ProfileForm";
 
 const Profile = () => {
