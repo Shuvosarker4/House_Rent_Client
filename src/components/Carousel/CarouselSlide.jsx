@@ -30,7 +30,11 @@ const CarouselSlide = ({
           </h1>
           <p className="py-4  sm:py-6 text-[#6C7F89]">{subtitle}</p>
           <div className="flex justify-center md:justify-start">
-            <button className="btn bg-[#fd390e] text-white">Get Started</button>
+            <a href="/properties">
+              <button className="btn bg-[#fd390e] text-white">
+                Get Started
+              </button>
+            </a>
           </div>
         </div>
       </div>

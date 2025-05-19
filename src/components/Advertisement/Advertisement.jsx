@@ -31,6 +31,10 @@ const Advertisement = ({ ads }) => {
         <h3 className="text-lg font-semibold text-gray-800 mt-1">
           Category : {category}
         </h3>
+
+        <button className="bg-[#fd390e] text-white text-sm font-semibold px-3 py-2 my-2 rounded ">
+          VIEW DETAILS
+        </button>
       </div>
     </div>
   );

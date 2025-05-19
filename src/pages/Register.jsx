@@ -19,7 +19,7 @@ const Register = () => {
     delete data.confirm_password;
     try {
       const response = await registerUser(data);
-      console.log(response);
+
       if (response.success) {
         setSuccessMsg(response.message);
       }
@@ -191,7 +191,9 @@ const Register = () => {
               )}
             </div>
 
-            <button type="submit" className="btn btn-primary w-full"></button>
+            <button type="submit" className="btn btn-primary w-full">
+              Create Account
+            </button>
           </form>
 
           <div className="text-center mt-4">

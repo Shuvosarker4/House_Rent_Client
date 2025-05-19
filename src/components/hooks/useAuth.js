@@ -28,19 +28,20 @@ const useAuth = () => {
     }
   };
 
-  // Login User
   const loginUser = async (userData) => {
     setErrorMsg("");
     try {
       const response = await apiClient.post("/auth/jwt/create/", userData);
-      console.log(response.data);
+      setAuthTokens(response.data);
       localStorage.setItem("authTokens", JSON.stringify(response.data));
 
       // After login set user
       await fetchUserProfile();
+      return { success: true };
     } catch (error) {
-      console.log(error.response.data?.detail);
-      setErrorMsg(error.response.data?.detail);
+      const message = error.response?.data?.detail || "Login failed";
+      setErrorMsg(message);
+      return { success: false };
     }
   };
 
@@ -76,7 +77,7 @@ const useAuth = () => {
     localStorage.removeItem("authTokens");
   };
 
-  return { user, errorMsg, loginUser, registerUser, logoutUser };
+  return { user, logoutUser, errorMsg, loginUser, registerUser };
 };
 
 export default useAuth;
