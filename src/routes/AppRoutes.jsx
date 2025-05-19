@@ -43,7 +43,7 @@ const AppRoutes = () => {
         >
           <Route index element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="payment/success/" element={<PaymentSuccess />} />
+          <Route path="payment/success" element={<PaymentSuccess />} />
         </Route>
       </Routes>
     </div>
