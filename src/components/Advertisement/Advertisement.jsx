@@ -1,6 +1,6 @@
-import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import property3 from "../../assets/images/slide_1.jpeg";
+import { Link } from "react-router";
 
 const Advertisement = ({ ads }) => {
   const { location, price, description, title, category } = ads;
@@ -32,9 +32,11 @@ const Advertisement = ({ ads }) => {
           Category : {category}
         </h3>
 
-        <button className="bg-[#fd390e] text-white text-sm font-semibold px-3 py-2 my-2 rounded ">
-          VIEW DETAILS
-        </button>
+        <Link to={`/property/${ads.id}`}>
+          <button className="bg-[#fd390e] text-white text-sm font-semibold px-3 py-2 my-2 rounded ">
+            VIEW DETAILS
+          </button>
+        </Link>
       </div>
     </div>
   );
