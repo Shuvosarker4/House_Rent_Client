@@ -1,5 +1,6 @@
 import { FiMenu, FiX } from "react-icons/fi";
 import useAuthContext from "../hooks/useAuthContext";
+import { Link } from "react-router";
 
 const Navbar = ({ sidebarOpen }) => {
   const { logoutUser } = useAuthContext;
@@ -32,16 +33,16 @@ const Navbar = ({ sidebarOpen }) => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a href="/dashboard/profile" className="justify-between">
+              <Link to="/dashboard/profile" className="justify-between">
                 Profile
                 <span className="badge">New</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/dashboard">Dashboard</a>
+              <Link to="/dashboard">Dashboard</Link>
             </li>
             <li>
-              <a onClick={logoutUser}>Logout</a>
+              <Link onClick={logoutUser}>Logout</Link>
             </li>
           </ul>
         </div>
