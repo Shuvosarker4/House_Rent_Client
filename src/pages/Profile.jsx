@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import useAuthContext from "../components/hooks/useAuthContext";
 import ErrorAlert from "../components/ErrorAlert";
 import ProfileForm from "../components/Dashboard/Profile/ProfileForm";
+import PasswordChangeForm from "../components/Dashboard/Profile/PasswordChangeForm";
 import ProfileButtons from "../components/Dashboard/Profile/ProfileButtons";
-import PasswordChangeForm from "../components/Dashboard/Profile/PasswordChangeform";
-
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
