@@ -14,6 +14,7 @@ import ProductDetails from "../pages/ProductDetails";
 import BookingPage from "../pages/BookingPage";
 import PaymentPage from "../pages/PaymentPage";
 import ThankYouPage from "../pages/ThankYouPage";
+import PaymentSuccess from "../pages/PaymentSuccess";
 
 const AppRoutes = () => {
   return (
@@ -29,7 +30,6 @@ const AppRoutes = () => {
           <Route path="property/:productId" element={<ProductDetails />} />
           <Route path="/booking/:productId" element={<BookingPage />} />
           <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
         </Route>
 
         {/* Private Routes  */}
@@ -43,6 +43,7 @@ const AppRoutes = () => {
         >
           <Route index element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="payment/success/" element={<PaymentSuccess />} />
         </Route>
       </Routes>
     </div>

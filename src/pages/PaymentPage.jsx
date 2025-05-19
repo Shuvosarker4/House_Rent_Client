@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import authApiClient from "../services/auth_api_client";
 
 const PaymentPage = () => {
   const navigate = useNavigate();
   const [bookingData, setBookingData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const data = sessionStorage.getItem("bookingInfo");
@@ -14,10 +16,23 @@ const PaymentPage = () => {
     }
   }, [navigate]);
 
-  const handlePayment = () => {
-    alert("Payment successful!");
-    sessionStorage.removeItem("bookingInfo");
-    navigate("/thank-you");
+  const handlePayment = async () => {
+    setLoading(true);
+    try {
+      const response = await authApiClient.post("/payment/initiate/", {
+        amount: bookingData.amount,
+      });
+      console.log(response.data);
+
+      if (response.data.payment_url) {
+        setLoading(false);
+        window.location.href = response.data.payment_url;
+      } else {
+        alert("Payment failed");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   if (!bookingData) return <p className="text-center py-10">Loading...</p>;
@@ -48,9 +63,15 @@ const PaymentPage = () => {
 
       <button
         onClick={handlePayment}
-        className="w-full py-2 text-xl font-semibold border border-[#fd390e] text-[#fd390e] hover:bg-[#fd390e] hover:text-white transition-all duration-300 rounded-md"
+        disabled={loading}
+        className={`w-full py-2 text-xl font-semibold border border-[#fd390e] transition-all duration-300 rounded-md
+            ${
+              loading
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "text-[#fd390e] hover:bg-[#fd390e] hover:text-white"
+            }`}
       >
-        Pay Now
+        {loading ? "Processing..." : `Pay $${amount}`}
       </button>
     </div>
   );

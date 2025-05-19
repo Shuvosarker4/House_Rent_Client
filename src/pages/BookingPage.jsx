@@ -8,7 +8,6 @@ const BookingPage = () => {
   const navigate = useNavigate();
   const [amount, setAmount] = useState(null);
 
-  // Fetch the product to get price
   useEffect(() => {
     apiClient
       .get(`/advertisements/${productId}/`)
@@ -31,7 +30,7 @@ const BookingPage = () => {
     const bookingData = {
       ...data,
       productId,
-      amount, // include amount in the booking info
+      amount,
     };
 
     sessionStorage.setItem("bookingInfo", JSON.stringify(bookingData));
