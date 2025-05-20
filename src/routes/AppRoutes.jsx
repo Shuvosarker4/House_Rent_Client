@@ -13,8 +13,8 @@ import Profile from "../pages/Profile";
 import ProductDetails from "../pages/ProductDetails";
 import BookingPage from "../pages/BookingPage";
 import PaymentPage from "../pages/PaymentPage";
-import PaymentSuccess from "../pages/PaymentSuccess";
 import ContactUs from "../pages/ContactUs";
+import PaymentSuccess from "../pages/PaymentSuccess";
 
 const AppRoutes = () => {
   return (
