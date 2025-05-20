@@ -6,6 +6,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 shadow-sm">
+      {/* START */}
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -40,13 +41,24 @@ const Navbar = () => {
             <li>
               <Link to="/contact">Contact Us</Link>
             </li>
+
+            {!user && (
+              <>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/register">Register</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 
-        {/* Interactive Logo */}
+        {/* Logo */}
         <Link
           to="/"
-          className="btn btn-ghost text-xl font-bold relative group focus:outline-none focus:ring-2 focus:ring-[#fd390e] transition-transform duration-200"
+          className="btn btn-ghost text-xl font-bold relative group"
           aria-label="Go to homepage"
         >
           <span className="inline-block mr-2 transform group-hover:rotate-12 transition-transform duration-300">
@@ -58,6 +70,7 @@ const Navbar = () => {
         </Link>
       </div>
 
+      {/* CENTER */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
@@ -75,7 +88,8 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="navbar-end pr-4">
+      {/* END */}
+      <div className="navbar-end pr-4 hidden sm:flex">
         {user ? (
           <div className="mr-4">
             <div className="dropdown dropdown-end">
@@ -113,13 +127,13 @@ const Navbar = () => {
           <div className="flex gap-3">
             <Link
               to="/login"
-              className="btn border-[#fd390e] text-[#fd390e] hover:bg-[#fd390e] hover:text-white transition-all duration-300"
+              className="btn border-[#fd390e] text-[#fd390e] hover:bg-[#fd390e] hover:text-white transition-all duration-300 hidden sm:inline-flex"
             >
               Login
             </Link>
             <Link
               to="/register"
-              className="btn border-[#fd390e] text-[#fd390e] hover:bg-[#fd390e] hover:text-white transition-all duration-300"
+              className="btn border-[#fd390e] text-[#fd390e] hover:bg-[#fd390e] hover:text-white transition-all duration-300 hidden sm:inline-flex"
             >
               Register
             </Link>
