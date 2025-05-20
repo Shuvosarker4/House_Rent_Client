@@ -72,6 +72,9 @@ const Navbar = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
+          <li>
+            <Link to="/payment/success">Payment</Link>
+          </li>
         </ul>
       </div>
 
