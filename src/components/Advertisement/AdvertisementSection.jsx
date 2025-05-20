@@ -19,7 +19,7 @@ const AdvertisementSection = () => {
   return (
     <div className="p-5">
       <h1 className=" text-center text-3xl sm:text-5xl font-bold text-[#091E22]">
-        Featured More Properties
+        Our Featured Properties
       </h1>
 
       {isLoading && (
