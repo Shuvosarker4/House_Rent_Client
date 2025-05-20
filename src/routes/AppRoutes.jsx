@@ -31,7 +31,7 @@ const AppRoutes = () => {
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
-          <Route path="payment/success" element={<PaymentSuccess />} />
+          <Route path="/payment/success" element={<PaymentSuccess />} />
         </Route>
 
         {/* Private Routes  */}
