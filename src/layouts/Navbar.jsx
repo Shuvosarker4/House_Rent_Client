@@ -3,6 +3,7 @@ import useAuthContext from "../components/hooks/useAuthContext";
 
 const Navbar = () => {
   const { user, logoutUser } = useAuthContext();
+
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -15,23 +16,21 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
           >
             <li>
               <Link to="/">Home</Link>
             </li>
-
             <li>
               <Link to="/properties">Property List</Link>
             </li>
@@ -43,16 +42,27 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">
-          HouseRent
+
+        {/* Interactive Logo */}
+        <Link
+          to="/"
+          className="btn btn-ghost text-xl font-bold relative group focus:outline-none focus:ring-2 focus:ring-[#fd390e] transition-transform duration-200"
+          aria-label="Go to homepage"
+        >
+          <span className="inline-block mr-2 transform group-hover:rotate-12 transition-transform duration-300">
+            🏠
+          </span>
+          <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[#fd390e] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 group-hover:after:origin-left group-hover:after:scale-x-100">
+            HouseRent
+          </span>
         </Link>
       </div>
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link to="/">Home</Link>
           </li>
-
           <li>
             <Link to="/properties">Property List</Link>
           </li>
@@ -64,9 +74,10 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+
+      <div className="navbar-end pr-4">
         {user ? (
-          <div>
+          <div className="mr-4">
             <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}
@@ -75,19 +86,18 @@ const Navbar = () => {
               >
                 <div className="w-10 rounded-full">
                   <img
-                    alt="Tailwind CSS Navbar component"
+                    alt="User avatar"
                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                   />
                 </div>
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
               >
                 <li>
                   <Link to="/dashboard/profile" className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
+                    Profile <span className="badge">New</span>
                   </Link>
                 </li>
                 <li>
