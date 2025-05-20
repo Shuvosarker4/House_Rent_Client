@@ -35,6 +35,12 @@ const Navbar = () => {
             <li>
               <Link to="/properties">Property List</Link>
             </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl">
@@ -49,6 +55,12 @@ const Navbar = () => {
 
           <li>
             <Link to="/properties">Property List</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
       </div>

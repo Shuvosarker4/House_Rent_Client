@@ -13,8 +13,8 @@ import Profile from "../pages/Profile";
 import ProductDetails from "../pages/ProductDetails";
 import BookingPage from "../pages/BookingPage";
 import PaymentPage from "../pages/PaymentPage";
-import ThankYouPage from "../pages/ThankYouPage";
 import PaymentSuccess from "../pages/PaymentSuccess";
+import ContactUs from "../pages/ContactUs";
 
 const AppRoutes = () => {
   return (
@@ -22,7 +22,6 @@ const AppRoutes = () => {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
           <Route path="properties" element={<Properties />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
@@ -30,6 +29,8 @@ const AppRoutes = () => {
           <Route path="property/:productId" element={<ProductDetails />} />
           <Route path="/booking/:productId" element={<BookingPage />} />
           <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
         </Route>
 
         {/* Private Routes  */}
