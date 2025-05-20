@@ -31,6 +31,7 @@ const AppRoutes = () => {
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
+          <Route path="payment/success" element={<PaymentSuccess />} />
         </Route>
 
         {/* Private Routes  */}
@@ -44,7 +45,6 @@ const AppRoutes = () => {
         >
           <Route index element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="payment/success" element={<PaymentSuccess />} />
         </Route>
       </Routes>
     </div>
